@@ -1,7 +1,6 @@
 # sentinel-2-grid-fgb
 
-This is an experimental repository containing the polygon features of the Sentinel-2 tiling grid converted to the [Flatgeobuf](https://github.com/flatgeobuf/flatgeobuf) format.  
-The original Sentinel-2 tiling grid in KML format is available [here](https://sentinel.esa.int/web/sentinel/missions/sentinel-2/data-products).
+This is an experimental repository containing the polygon features of the Sentinel-2 tiling grid converted to the [Flatgeobuf](https://github.com/flatgeobuf/flatgeobuf) format. The original Sentinel-2 tiling grid in KML format is available [here](https://sentinel.esa.int/web/sentinel/missions/sentinel-2/data-products).
 
 Note, that accuracy of the tiles has not been verified yet.
 
@@ -14,7 +13,7 @@ The following command on your local system
 ogrinfo -al -so /vsicurl/https://github.com/maawoo/sentinel-2-grid-fgb/raw/main/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00_poly.fgb
 ```
 
-should print an output similar to this:
+should print this output:
 ```
 INFO: Open of `/vsicurl/https://github.com/maawoo/sentinel-2-grid-fgb/raw/main/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00_poly.fgb'
       using driver `FlatGeobuf' successful.
@@ -65,7 +64,7 @@ The original KML file was first converted using [ogr2ogr](https://gdal.org/progr
 ```
 ogr2ogr -f "Flatgeobuf" -explodecollections -skipfailures out.fgb in.kml`
 ```
-(Thanks for the hint in [this discussion](https://github.com/flatgeobuf/flatgeobuf/discussions/262))
+(Thanks for the advice in [this discussion](https://github.com/flatgeobuf/flatgeobuf/discussions/262))
 
 The output file was then imported in QGIS and only the polygon features exported to a separate Flatgeobuf file, without 
 any attribute except of "Name". 
