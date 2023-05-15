@@ -60,13 +60,9 @@ ogr2ogr -f "GeoJSON" out.geojson /vsicurl/https://github.com/maawoo/sentinel-2-g
 
 ## Conversion
 
-The original KML file was first converted using [ogr2ogr](https://gdal.org/programs/ogr2ogr.html):
+The original KML file was converted using [ogr2ogr](https://gdal.org/programs/ogr2ogr.html):
 ```
-ogr2ogr -f "Flatgeobuf" -explodecollections -skipfailures out.fgb in.kml`
+ogr2ogr -f "Flatgeobuf" out.fgb in.kml -nln features -explodecollections -skipfailures -nlt POLYGON -sql 'SELECT Name FROM Features' --debug on`
 ```
-(Thanks for the advice in [this discussion](https://github.com/flatgeobuf/flatgeobuf/discussions/262))
 
-The output file was then imported in QGIS and only the polygon features exported to a separate Flatgeobuf file, without 
-any attribute except of "Name". 
-
-If anyone has a better suggestion on how to do the conversion more efficiently and only using the commandline, please let me know.
+Thanks for the advice in [this discussion](https://github.com/flatgeobuf/flatgeobuf/discussions/262)
