@@ -1,5 +1,10 @@
 # sentinel-2-grid-fgb
 
+***
+:heavy_exclamation_mark: Please note that I have archived this repository in favor of:
+[https://github.com/maawoo/sentinel-2-grid-geoparquet](https://github.com/maawoo/sentinel-2-grid-geoparquet)
+***
+
 This is an experimental repository containing the polygon features of the Sentinel-2 tiling grid converted to the [Flatgeobuf](https://github.com/flatgeobuf/flatgeobuf) format. The original Sentinel-2 tiling grid in KML format is available [here](https://sentinel.esa.int/web/sentinel/missions/sentinel-2/data-products).
 
 Note, that accuracy of the tiles has not been verified yet.
